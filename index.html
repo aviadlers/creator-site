@@ -1,330 +1,185 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Adlers TV — Your Stay Here Will Be Televised 📺</title>
-<meta name="description" content="Adlers TV captures stories that inspire — blending film, culture, and creativity. Watch TikTok, YouTube & support us.">
-<link rel="icon" href="assets/adlers-glow-logo.png">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Adlers TV — Your Stay Here Will Be Televised</title>
+<link rel="icon" href="assets/adlers-logo.png" />
 <style>
-  :root{
-    --bg:#000000;              /* pure black */
-    --primary:#B3731E;
-    --accent:#FFD580;
-    --glass: rgba(255,213,128,0.04);
-    --muted: rgba(255,213,128,0.75);
-    font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-  *{box-sizing:border-box}
-  html,body{height:100%;margin:0;background:var(--bg);color:var(--accent);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-  a{color:inherit;text-decoration:none}
-  .wrap{max-width:1200px;margin:0 auto;padding:28px}
-
-  /* Hero */
-  .hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:64px 12px 40px;min-height:48vh;justify-content:center}
-  .logo{width:220px;max-width:72%;border-radius:10px;filter:drop-shadow(0 18px 45px rgba(179,115,30,0.7));margin-bottom:18px;display:block}
-  .tagline{font-size:28px;margin:6px 0 18px;color:var(--accent);font-weight:700;letter-spacing:0.1em}
-  .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
-  .btn{display:inline-block;padding:10px 18px;border-radius:10px;border:1px solid rgba(255,213,128,0.06);color:var(--accent);background:transparent;transition:transform .15s, box-shadow .15s;font-weight:600}
-  .btn:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(179,115,30,0.12);background:linear-gradient(135deg,var(--primary),#9a5712);color:#000}
-  .big{padding:12px 22px;border-radius:12px}
-
-  /* Stats */
-  .stats{margin:28px 0;display:flex;gap:18px;justify-content:center;align-items:center;flex-wrap:wrap}
-  .stat{background:var(--glass);padding:12px 16px;border-radius:12px;min-width:120px;text-align:center;border:1px solid rgba(255,213,128,0.03)}
-  .number{font-size:20px;font-weight:700;color:#fff}
-  .label{font-size:12px;color:var(--muted);margin-top:6px}
-
-  /* Videos grid */
-  .videos{margin:36px 0}
-  .video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
-  .embed-frame{width:100%;height:520px;border:0;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,0.6);overflow:hidden}
-  /* placeholder cards for empty slots */
-  .video-card{background:var(--glass);border-radius:12px;padding:0;display:flex;flex-direction:column;overflow:hidden;border:1px solid rgba(255,213,128,0.03)}
-  .video-thumb{position:relative;padding-bottom:56.25%; /* 16:9 */ background:#0b0b0b}
-  .video-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .video-info{padding:14px}
-  .video-title{font-size:1.05rem;color:var(--accent);margin-bottom:8px}
-  .video-desc{font-size:0.9rem;color:var(--muted);line-height:1.35}
-  .watch-btn{display:inline-block;margin-top:12px;padding:8px 12px;border-radius:10px;background:transparent;border:1px solid rgba(255,213,128,0.06);color:var(--accent);font-weight:600}
-  .watch-btn:hover{background:linear-gradient(135deg,var(--primary),#9a5712);color:#000}
-
-  /* About/Support */
-  .about,.support{margin-top:28px;padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,207,130,0.02), rgba(0,0,0,0.02));color:rgba(255,250,240,0.95);border:1px solid rgba(255,213,128,0.03)}
-  .about h3,.support h3{color:var(--accent);margin-top:0}
-  .support-grid{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:10px}
-  .donate-btn{padding:10px 14px;border-radius:12px;border:1px solid rgba(255,213,128,0.06);background:transparent;color:var(--accent);cursor:pointer;transition:all .18s;font-weight:600}
-  .donate-btn:hover{box-shadow:0 12px 30px rgba(179,115,30,0.45);transform:translateY(-4px);background:linear-gradient(135deg,var(--primary),#9a5712);color:#000}
-
-  /* Footer */
-  footer{margin-top:34px;text-align:center;color:rgba(255,213,128,0.8);font-size:13px;padding-bottom:28px;border-top:1px solid rgba(255,213,128,0.03);padding-top:20px}
-
-  /* small screens */
-  @media (max-width:640px){
-    .embed-frame{height:360px}
-    .tagline{font-size:20px}
-    .logo{width:160px}
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+  }
+  header {
+    position: relative;
+    z-index: 2;
+    padding: 4rem 1rem 2rem;
+  }
+  .logo {
+    width: 160px;
+    filter: drop-shadow(0 0 12px #c47e2c);
+    transition: filter 0.3s ease;
+  }
+  .logo:hover {
+    filter: drop-shadow(0 0 20px #ffb84d);
+  }
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #c47e2c;
+    margin-top: 1rem;
+    text-shadow: 0 0 12px rgba(196,126,44,0.5);
+  }
+  .videos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 3rem 1rem;
+    z-index: 2;
+    position: relative;
+  }
+  iframe {
+    width: 100%;
+    height: 500px;
+    border-radius: 12px;
+    border: 2px solid #222;
+  }
+  button {
+    background-color: #c47e2c;
+    color: black;
+    border: none;
+    padding: 0.7rem 1.4rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  button:hover {
+    background-color: #ffb84d;
+    transform: scale(1.05);
+  }
+  .donate {
+    margin-top: 3rem;
+  }
+  footer {
+    background: #000;
+    color: #888;
+    font-size: 0.9rem;
+    padding: 2rem 1rem;
+    z-index: 2;
+    position: relative;
+  }
+  /* Cinematic flecks */
+  #flecks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
   }
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <header class="hero" role="banner">
-      <!-- Your original logo file should be uploaded to /assets/adlers-glow-logo.png -->
-      <img class="logo" src="assets/adlers-glow-logo.png" alt="Adlers TV logo (glow)" />
-      <div class="tagline">Your Stay Here Will Be Televised 📺</div>
 
-      <div class="cta-row" aria-hidden>
-        <!-- you said you'll replace socials yourself; kept blank hrefs for you to fill -->
-        <a class="btn" href="https://www.tiktok.com/@adlerstv" target="_blank" rel="noopener">▶ TikTok</a>
-        <a class="btn" href="#" id="youtubeBtn" target="_blank" rel="noopener">📺 YouTube</a>
-        <a class="btn" href="#" id="whatsappBtn" target="_blank" rel="noopener">💬 WhatsApp</a>
-      </div>
-    </header>
+<canvas id="flecks"></canvas>
 
-    <!-- Live-ish stats -->
-    <section class="stats" aria-live="polite" aria-atomic="true">
-      <div class="stat"><div class="number" id="followers">—</div><div class="label">Followers</div></div>
-      <div class="stat"><div class="number" id="likes">—</div><div class="label">Likes</div></div>
-      <div class="stat"><div class="number" id="videos">—</div><div class="label">Videos</div></div>
-    </section>
+<header>
+  <!-- Upload your logo to /assets/adlers-logo.png -->
+  <img src="assets/adlers-logo.png" alt="Adlers TV Logo" class="logo" />
+  <h1>Your Stay Here Will Be Televised 📺</h1>
+</header>
 
-    <!-- Videos: 6 slots (first 3 are your real embeds; last 3 are placeholders you can replace) -->
-    <section class="videos" aria-labelledby="featured-heading">
-      <h2 id="featured-heading" style="color:var(--accent);text-align:center;margin-bottom:18px">Featured</h2>
+<section class="videos">
+  <!-- Real TikTok embeds -->
+  <iframe src="https://www.tiktok.com/embed/v2/7519906671586577669" allowfullscreen></iframe>
+  <iframe src="https://www.tiktok.com/embed/v2/7559953340436598028" allowfullscreen></iframe>
+  <iframe src="https://www.tiktok.com/embed/v2/7548101112243571973" allowfullscreen></iframe>
 
-      <div class="video-grid" id="videoGrid">
-        <!-- 1 -->
-        <div class="video-card">
-          <iframe class="embed-frame" src="https://www.tiktok.com/embed/v2/7519906671586577669" allow="autoplay; encrypted-media" loading="lazy" title="Adlers TV video 1"></iframe>
-          <div class="video-info" style="text-align:center">
-            <div class="video-title">Behind The Scenes: Legacy Project</div>
-            <a class="watch-btn" href="https://www.tiktok.com/@adlerstv/video/7519906671586577669" target="_blank" rel="noopener">🎬 Watch on TikTok</a>
-          </div>
-        </div>
+  <!-- Placeholder TikToks -->
+  <iframe src="https://www.tiktok.com/embed/v2/0000000000000000001" allowfullscreen></iframe>
+  <iframe src="https://www.tiktok.com/embed/v2/0000000000000000002" allowfullscreen></iframe>
+  <iframe src="https://www.tiktok.com/embed/v2/0000000000000000003" allowfullscreen></iframe>
+</section>
 
-        <!-- 2 -->
-        <div class="video-card">
-          <iframe class="embed-frame" src="https://www.tiktok.com/embed/v2/7559953340436598028" allow="autoplay; encrypted-media" loading="lazy" title="Adlers TV video 2"></iframe>
-          <div class="video-info" style="text-align:center">
-            <div class="video-title">Cinematic Lighting Techniques Explained</div>
-            <a class="watch-btn" href="https://www.tiktok.com/@adlerstv/video/7559953340436598028" target="_blank" rel="noopener">🎬 Watch on TikTok</a>
-          </div>
-        </div>
-
-        <!-- 3 -->
-        <div class="video-card">
-          <iframe class="embed-frame" src="https://www.tiktok.com/embed/v2/7548101112243571973" allow="autoplay; encrypted-media" loading="lazy" title="Adlers TV video 3"></iframe>
-          <div class="video-info" style="text-align:center">
-            <div class="video-title">Community Spotlight: Local Artists</div>
-            <a class="watch-btn" href="https://www.tiktok.com/@adlerstv/video/7548101112243571973" target="_blank" rel="noopener">🎬 Watch on TikTok</a>
-          </div>
-        </div>
-
-        <!-- 4 Placeholder -->
-        <div class="video-card">
-          <div class="video-thumb">
-            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80" alt="Add your 4th video thumbnail">
-          </div>
-          <div class="video-info">
-            <div class="video-title">Add your next video</div>
-            <div class="video-desc">Placeholder slot — replace with an embed or link to a TikTok video when ready.</div>
-            <div style="text-align:center"><a class="watch-btn" href="https://www.tiktok.com/@adlerstv" target="_blank" rel="noopener">Open profile</a></div>
-          </div>
-        </div>
-
-        <!-- 5 Placeholder -->
-        <div class="video-card">
-          <div class="video-thumb">
-            <img src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=1200&q=80" alt="Add your 5th video thumbnail">
-          </div>
-          <div class="video-info">
-            <div class="video-title">Add your next video</div>
-            <div class="video-desc">Placeholder slot — replace with an embed or link to a TikTok video when ready.</div>
-            <div style="text-align:center"><a class="watch-btn" href="https://www.tiktok.com/@adlerstv" target="_blank" rel="noopener">Open profile</a></div>
-          </div>
-        </div>
-
-        <!-- 6 Placeholder -->
-        <div class="video-card">
-          <div class="video-thumb">
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80" alt="Add your 6th video thumbnail">
-          </div>
-          <div class="video-info">
-            <div class="video-title">Add your next video</div>
-            <div class="video-desc">Placeholder slot — replace with an embed or link to a TikTok video when ready.</div>
-            <div style="text-align:center"><a class="watch-btn" href="https://www.tiktok.com/@adlerstv" target="_blank" rel="noopener">Open profile</a></div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="about">
-      <h3>Our Story</h3>
-      <p style="max-width:900px;margin:12px auto 0;line-height:1.6">
-        Adlers TV is a creative media production house dedicated to telling bold, authentic stories. We film, edit and share community-driven content — cinematic shorts, tutorials, and spotlights. Join us — your stay here will be televised.
-      </p>
-    </section>
-
-    <section class="support">
-      <h3>Support Our Creative Journey</h3>
-      <div class="support-grid">
-        <button class="donate-btn" data-provider="Airtel">📱 Airtel</button>
-        <button class="donate-btn" data-provider="MTN">💳 MTN</button>
-        <button class="donate-btn" data-provider="PayPal">🌐 PayPal</button>
-      </div>
-    </section>
-
-    <footer>
-      <div style="margin-bottom:8px">Visitors: <strong id="visitorCount">—</strong></div>
-      <div style="font-size:13px;color:rgba(255,213,128,0.75)">© 2025 Adlers TV | Built with 💡 Passion & Purpose</div>
-    </footer>
+<section class="donate">
+  <h2 style="color:#c47e2c;">Support the Vision 🎥</h2>
+  <p>Donate via your preferred platform:</p>
+  <div style="margin-top:1rem;">
+    <button onclick="window.open('https://www.paypal.me/adlerstv','_blank')">💳 PayPal</button>
+    <button onclick="alert('Airtel Money Number: +260XXXXXXXX')">📱 Airtel</button>
+    <button onclick="alert('MTN Mobile Money: +260XXXXXXXX')">📱 MTN</button>
   </div>
+</section>
 
-  <!-- Donation Modal (hidden) -->
-  <div id="donationModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(4px);align-items:center;justify-content:center;z-index:9999">
-    <div style="background:#0b0b0b;padding:22px;border-radius:12px;max-width:420px;width:92%;border:1px solid rgba(255,213,128,0.06);color:var(--accent)">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
-        <strong id="modalTitle" style="color:var(--accent)">Support</strong>
-        <button id="modalClose" style="background:transparent;border:0;color:var(--accent);font-size:20px;cursor:pointer">✕</button>
-      </div>
-      <div id="modalBody" style="font-size:0.95rem;line-height:1.5"></div>
-    </div>
-  </div>
+<footer>
+  <p>👁️ Live Visitors: <span id="visitors">0</span> | 🎯 Followers: <span id="followers">Loading...</span></p>
+  <p>© 2025 Adlers TV. All rights reserved.</p>
+</footer>
 
 <script>
-/* ------------- Configuration & data ------------- */
-const TIKTOK_USER = 'adlerstv';
-const adlersTVVideos = [
-  { id: "7519906671586577669", title: "Behind The Scenes: Legacy Project" },
-  { id: "7559953340436598028", title: "Cinematic Lighting Techniques Explained" },
-  { id: "7548101112243571973", title: "Community Spotlight: Local Artists" }
-];
+  // Flecks animation
+  const canvas = document.getElementById('flecks');
+  const ctx = canvas.getContext('2d');
+  let w, h;
+  function resize() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
 
-/* Donation payment data (example) */
-const paymentMethods = {
-  Airtel: { instructions: "Send via Airtel Money to +260 97X XXX XXX", details: "Airtel Wallet: 097XXXXXXXX\nName: Adlers TV" },
-  MTN: { instructions: "Send via MTN Mobile Money to +260 96X XXX XXX", details: "MTN Wallet: 096XXXXXXXX\nName: Adlers TV" },
-  PayPal: { instructions: "Donate via PayPal", link: "https://paypal.me/adlerstv" }
-};
+  const flecks = Array(80).fill().map(() => ({
+    x: Math.random() * w,
+    y: Math.random() * h,
+    r: Math.random() * 1.5 + 0.5,
+    s: Math.random() * 0.5 + 0.2,
+    o: Math.random() * 0.3 + 0.2
+  }));
 
-/* ------------- Visitor counter ------------- */
-const visitorEl = document.getElementById('visitorCount');
-(function(){
-  fetch('https://api.countapi.xyz/hit/adlerstv-site/visits')
-    .then(r => r.json())
-    .then(j => { visitorEl.textContent = (j.value || 0).toLocaleString(); })
-    .catch(() => {
-      // fallback: local increment
-      let count = localStorage.getItem('adlerstv_visitors') || 1250;
-      count = parseInt(count) + 1;
-      localStorage.setItem('adlerstv_visitors', count);
-      visitorEl.textContent = count.toLocaleString();
-    });
-})();
-
-/* ------------- Stats (followers/likes/videos) ------------- */
-const followersEl = document.getElementById('followers');
-const likesEl = document.getElementById('likes');
-const videosEl = document.getElementById('videos');
-
-function animateNumber(el, from, to, ms = 900) {
-  const start = Date.now();
-  const diff = to - from;
-  (function tick(){
-    const t = Math.min(1, (Date.now() - start)/ms);
-    el.textContent = Math.floor(from + diff * t).toLocaleString();
-    if (t < 1) requestAnimationFrame(tick);
-  })();
-}
-
-// Demo fallback numbers (keeps UI alive until we fetch real ones)
-function showDemoStats(){
-  animateNumber(followersEl, 0, 12530);
-  animateNumber(likesEl, 0, 84920);
-  animateNumber(videosEl, 0, 140);
-}
-
-// Attempt to fetch TikTok stats via public proxies (best-effort)
-async function fetchTikTokStats(){
-  try {
-    const proxy = 'https://api.allorigins.win/raw?url=';
-    const url = 'https://www.tiktok.com/@' + encodeURIComponent(TIKTOK_USER);
-    const res = await fetch(proxy + encodeURIComponent(url), {cache: "no-store"});
-    if (!res.ok) throw new Error('proxy failed ' + res.status);
-    const text = await res.text();
-
-    // Try to find followerCount or common JSON fields
-    let match = text.match(/"followerCount":\s*"?([0-9,]+)"?/i);
-    if (match && match[1]) {
-      const followers = Number(String(match[1]).replace(/,/g,''));
-      animateNumber(followersEl, 0, followers);
-    } else {
-      // fallback: try to find a followers-like token in the page
-      let alt = text.match(/([\d,.]+)\s*Followers/i);
-      if (alt && alt[1]) animateNumber(followersEl, 0, Number(String(alt[1]).replace(/,/g,'')));
-      else showDemoStats();
+  function animate() {
+    ctx.clearRect(0, 0, w, h);
+    for (const f of flecks) {
+      ctx.beginPath();
+      ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255,215,100,${f.o})`;
+      ctx.fill();
+      f.y += f.s;
+      if (f.y > h) {
+        f.y = -5;
+        f.x = Math.random() * w;
+      }
     }
-
-    // likes and videos (best-effort)
-    let likesMatch = text.match(/"heart":\s*"?([0-9,]+)"?/i) || text.match(/"likes":\s*"?([0-9,]+)"?/i);
-    if (likesMatch && likesMatch[1]) animateNumber(likesEl, 0, Number(String(likesMatch[1]).replace(/,/g,'')));
-
-    let vidsMatch = text.match(/"videoCount":\s*"?([0-9,]+)"?/i) || text.match(/"video_count":\s*"?([0-9,]+)"?/i);
-    if (vidsMatch && vidsMatch[1]) animateNumber(videosEl, 0, Number(String(vidsMatch[1]).replace(/,/g,'')));
-
-  } catch (err) {
-    console.warn('TikTok stats fetch failed:', err);
-    showDemoStats();
+    requestAnimationFrame(animate);
   }
-}
+  animate();
 
-/* ------------- Modal (donations) ------------- */
-const modal = document.getElementById('donationModal');
-const modalTitle = document.getElementById('modalTitle');
-const modalBody = document.getElementById('modalBody');
-const modalClose = document.getElementById('modalClose');
-
-document.querySelectorAll('.donate-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const provider = btn.dataset.provider;
-    const method = paymentMethods[provider] || { instructions: "Contact us for payment details" };
-    modalTitle.textContent = `Support via ${provider}`;
-    let html = `<p style="margin:0 0 8px">${method.instructions || ''}</p>`;
-    if (method.details) html += `<div style="background:rgba(255,213,128,0.03);padding:10px;border-radius:8px;margin:10px 0;white-space:pre-wrap">${method.details}</div>`;
-    if (method.link) html += `<div style="margin-top:8px"><a class="btn big" href="${method.link}" target="_blank" rel="noopener">Donate via ${provider}</a></div>`;
-    modalBody.innerHTML = html;
-    modal.style.display = 'flex';
-  });
-});
-
-if (modalClose) modalClose.addEventListener('click', () => modal.style.display = 'none');
-modal.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; });
-
-/* ------------- Small helpers & init ------------- */
-document.addEventListener('DOMContentLoaded', () => {
-  fetchTikTokStats();
-  // auto-refresh stats occasionally
-  setInterval(fetchTikTokStats, 120000); // 2 minutes
-});
-
-/* ------------- Make video cards clickable (open real TikTok) ------------- */
-document.getElementById('videoGrid').addEventListener('click', (e) => {
-  let el = e.target;
-  // find ancestor .video-card
-  while (el && !el.classList.contains('video-card')) el = el.parentElement;
-  if (!el) return;
-  // if it's an iframe card (embedded) clicking iframe will be handled by the player; clicking below opens on TikTok via watch button
-  // For placeholder cards open profile
-  const iframe = el.querySelector('iframe');
-  if (!iframe) {
-    window.open('https://www.tiktok.com/@' + TIKTOK_USER, '_blank');
+  // Live follower counter (mock example)
+  async function fetchFollowers() {
+    try {
+      // You can integrate with a TikTok API or RapidAPI later
+      document.getElementById("followers").textContent = "12.4K+";
+    } catch {
+      document.getElementById("followers").textContent = "N/A";
+    }
   }
-});
+  fetchFollowers();
 
-/* ------------- Accessibility note ------------- */
-/* All external fetches are best-effort from the browser. For reliable production follower counts consider a tiny serverless endpoint that scrapes TikTok or a paid social-stats API. */
+  // Visitor counter
+  const visitors = localStorage.getItem("visitors") || 0;
+  const newCount = Number(visitors) + 1;
+  localStorage.setItem("visitors", newCount);
+  document.getElementById("visitors").textContent = newCount;
 </script>
+
 </body>
 </html>
